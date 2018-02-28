@@ -1,0 +1,38 @@
+
+
+<div class="row">
+  <div style="margin-top: 20px" ng-repeat="image in vm.imageArray" class="col-xs-4" align="center">
+    <div class="thumbnail">
+      <img ng-hide="image.is_clicked" ng-src="{{image.url}}" style="width: 200px; height: 200px;"
+           ng-click="vm.flipImage(image.id, image.is_clicked)" alt="">
+      <div align= "center" class = "textBox" ng-show="image.is_clicked"
+           ng-click="vm.flipImage(image.id, image.is_clicked)">
+        <p class = "note">
+          {{image.note}}
+        </p>
+      </div>
+      <p class = "count">Number of views: {{image.is_clicked_count}}</p>
+      <div class="caption">
+        <h3>{{image.title}}</h3>
+        <p>
+          <a class="btn btn-success btn-sm" ng-click="vm.upvote(image.id)" href="#">
+            <i class="far fa-arrow-alt-circle-up fa"></i> Upvote</a>
+          <p class="count">Number of Upvotes: {{image.votecount}}</p>
+          <button class="btn btn-info btn-sm" ng-click="vm.comments(image.id, image.view_comments)">View/Hide Comments</button>
+          <button class="btn btn-info btn-sm" ng-click="vm.addComment(image.id)">Add Comment</button>
+       </p>
+       <div ng-show="image.view_comments">
+         <ul align = "left" class="commentList">
+           <li ng-repeat="comment in vm.commentArray" class="commentItem">
+             {{comment.comment}}
+           </li>
+         </ul>
+       </div>
+       <div class= "addComment" ng-show="image.add_comment">
+         <input type="text" ng-model="noteInput" placeholder="add comment here">
+         <button class="btn btn-info btn-sm" ng-click="vm.submitComment(image.id, noteInput)">Submit</button>
+         <button class="btn btn-danger btn-sm" ng-click="vm.addComment()">Cancel</button>
+       </div>
+      </div>
+    </div>
+  </div>
