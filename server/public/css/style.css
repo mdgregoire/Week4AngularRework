@@ -1,0 +1,43 @@
+
+body{
+  background-color: AntiqueWhite;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+}
+h1{
+  font-size: 100px;
+  text-align: center;
+}
+.note{
+  padding: 5px;
+  text-align: center;
+}
+.count{
+  font-size: 10px;
+  text-align: right;
+}
+.textBox{
+  width: 200px;
+  height: 200px;
+  background-color: mintcream;
+  /* margin-bottom: 20px; */
+}
+.btn{
+  margin: 5px;
+}
+.buttonArea{
+  text-align: center;
+}
+.addComment{
+  text-align: center;
+  margin-top: 10px;
+}
+.thumbnail{
+  background-color: PowderBlue;
+  width: 300px;
+  /* height: 500px; */
+}
+
+img{
+  padding-top: 30px;
+}
